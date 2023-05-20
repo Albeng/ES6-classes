@@ -34,7 +34,7 @@ person2.sayHello();
 const person3 = new Person("luis", 13);
 person3.sayHello(); */
 
-class Animal {
+/*class Animal {
     constructor(name, species, age) {
         this.name = name;
         this.species = species;
@@ -60,7 +60,39 @@ animal3.introduce();
 
 animal2.birthday();
 console.log(`It's ${animal2.name}'s birthday!`);
-animal2.introduce();
+animal2.introduce(); */
 
 
+class Vehicle {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    getDescription() {
+        console.log(`This is a ${this.make} ${this.model} from ${this.year}.`)
+    }
+}
+
+class Car extends Vehicle{
+    constructor(make, model, year, numOfDoors){
+        super(make, model, year);
+        this.numOfDoors = numOfDoors;
+    }
+}
+
+class ElectricCar extends Car {
+    constructor(make, model, year, numOfDoors, batteryCapacity) {
+        super(make,model, year, numOfDoors);
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    getDescription() {
+        console.log(`This is an electric ${this.make} ${this.model} from ${this.year} with ${this.batteryCapacity} battery capacity`);
+    }
+}
+
+const myElectricCar = new ElectricCar("Tesla", "Model 3", 2022, 4, 82);
+myElectricCar.getDescription();
 
